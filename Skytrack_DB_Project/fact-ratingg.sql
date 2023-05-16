@@ -99,8 +99,8 @@ AS
             ss.power_supply_rating,
             ss.seat_storage_rating,
             ss.recommended,
-			a.overall_rating
-			,c.overall_recommendation
+			CAST(ra.overall_rating as numeric(8,2)) as overall_rating,
+		    CAST(re.overall_recommendation as numeric(8,2)) as overall_recommendation
 	from stg.stg_airline as sa
 
 	left join stg.stg_airport sp
@@ -143,7 +143,7 @@ AS
 				(cast(sl.overall_rating as numeric(8,2))), 
 				(cast(ss.overall_rating as numeric(8,2)))
 				) v (Col)   
-			) a
+			) ra
 			OUTER APPLY (
 			SELECT AVG(Col) AS [overall_recommendation]
 			FROM (VALUES
@@ -152,5 +152,5 @@ AS
 				(cast(sl.recommended as numeric(4,2))), 
 				(cast(ss.recommended as numeric(4,2)))
 			) v (Col)   
-			) c  
+			) re  
 RETURN 0
