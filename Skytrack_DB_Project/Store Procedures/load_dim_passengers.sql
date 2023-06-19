@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [dwh].[load_dim_passengers]
 AS
+BEGIN
 	insert into dwh.dim_passengers (name, country, type)
 	select distinct author, author_country, type_traveller
 	from stg.stg_airline
@@ -12,4 +13,4 @@ AS
 	UNION
 	select distinct author, author_country, type_traveller
 	from stg.stg_seat
-RETURN 0
+END

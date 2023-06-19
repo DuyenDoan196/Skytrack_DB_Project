@@ -1,0 +1,1 @@
+﻿exec dwh.load_dim_passengers

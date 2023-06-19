@@ -58,35 +58,46 @@
     <Folder Include="Properties" />
     <Folder Include="Table" />
     <Folder Include="Scripts" />
-    <Folder Include="Table\Dim-fact" />
+    <Folder Include="Table\dwh" />
     <Folder Include="Table\stg" />
-    <Folder Include="store_procedures" />
+    <Folder Include="Store Procedures" />
+    <Folder Include="Schemas" />
+    <Folder Include="Views" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\Bulk_insert.sql" />
-    <Build Include="Table\Dim-fact\dim_aircrafts.sql" />
-    <Build Include="Table\Dim-fact\dim_airlines.sql" />
-    <Build Include="Table\Dim-fact\dim_airports.sql" />
-    <Build Include="Table\Dim-fact\dim_lounges.sql" />
+    <None Include="Scripts\Airport_bulk_insert.sql" />
+    <Build Include="Table\dwh\dim_aircrafts.sql" />
+    <Build Include="Table\dwh\dim_airlines.sql" />
+    <Build Include="Table\dwh\dim_airports.sql" />
+    <Build Include="Table\dwh\dim_lounges.sql" />
     <Build Include="Table\stg\stg_airline.sql" />
     <Build Include="Table\stg\stg_airport.sql" />
-    <PostDeploy Include="Scripts\Execute_PROC.sql" />
+    <PostDeploy Include="Scripts\Exec_airline.sql" />
+    <None Include="Scripts\Lounge_bulk_insert.sql" />
+    <None Include="Scripts\Airline_bulk_insert.sql" />
+    <None Include="Scripts\Seat_bulk_insert.sql" />
+    <None Include="Scripts\Exec_airport.sql" />
+    <None Include="Scripts\Exec_aircrafts.sql" />
+    <None Include="Scripts\Exec_lounge.sql" />
+    <None Include="Scripts\Exec_fact_rating.sql" />
+    <None Include="Scripts\Exec_passengers.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Table\stg\stg_lounge.sql" />
     <Build Include="Table\stg\stg_seat.sql" />
-    <Build Include="Table\Dim-fact\dim_passengers.sql" />
-    <Build Include="Table\Dim-fact\fact.sql" />
-    <Build Include="Table\Dim-fact\Dim_date.sql" />
-    <Build Include="stg.sql" />
-    <Build Include="dwh.sql" />
-    <Build Include="store_procedures\load_dim_airline.sql" />
-    <Build Include="store_procedures\load_dim_aircrafts.sql" />
-    <Build Include="store_procedures\load_dim_airport.sql" />
-    <Build Include="store_procedures\load_dim_lounge.sql" />
-    <Build Include="store_procedures\load_dim_passengers.sql" />
-    <Build Include="fact-ratingg.sql" />
-    <Build Include="view_airport.sql" />
-    <Build Include="view_airline.sql" />
+    <Build Include="Table\dwh\dim_passengers.sql" />
+    <Build Include="Table\dwh\fact.sql" />
+    <Build Include="Table\dwh\Dim_date.sql" />
+    <Build Include="Store Procedures\load_dim_airline.sql" />
+    <Build Include="Store Procedures\load_dim_aircrafts.sql" />
+    <Build Include="Store Procedures\load_dim_airport.sql" />
+    <Build Include="Store Procedures\load_dim_lounge.sql" />
+    <Build Include="Store Procedures\load_dim_passengers.sql" />
+    <Build Include="Schemas\stg.sql" />
+    <Build Include="Schemas\dwh.sql" />
+    <Build Include="Views\view_airline.sql" />
+    <Build Include="Views\view_airport.sql" />
+    <Build Include="Store Procedures\fact-ratingg.sql" />
+    <Build Include="Table\dwh\Dim calendar.sql" />
   </ItemGroup>
 </Project>
