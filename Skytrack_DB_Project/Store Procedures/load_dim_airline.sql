@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [dwh].[load_dim_airline]
 AS
+BEGIN
 	insert into dwh.dim_airline(name, link, cabin, route)
 	select distinct sal.airline_name, sal.link, cabin_flown, route
 	from stg.stg_airline sal
@@ -9,5 +10,5 @@ AS
 	union 
 	select sl.airline_name, sl.link, null as cabin_flown, null as route
 	from stg.stg_lounge sl
-RETURN 0
+END
 

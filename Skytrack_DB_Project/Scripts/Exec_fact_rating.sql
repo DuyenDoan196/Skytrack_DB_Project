@@ -1,0 +1,1 @@
+﻿exec dwh.[fact-ratingg]
